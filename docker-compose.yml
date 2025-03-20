@@ -1,0 +1,29 @@
+services: 
+  php: 
+    build: .
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/var/www/html
+    ports: 
+      - 80:80
+    env_file:
+      - ./.env
+  db: 
+    image: mariadb:11.8-rc
+    volumes:
+      - ./config/data.sql:/docker-entrypoint-initdb.d/data.sql
+    ports: 
+      - 3306:3306
+    expose: 
+      - 3306:3306
+    environment:
+      - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
+      - MARIADB_USER=${MARIADB_USER}
+      - MARIADB_PASSWORD=${MARIADB_PASSWORD}
+      - MARIADB_DATABASE=${MARIADB_DATABASE}
+  adminer: 
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
