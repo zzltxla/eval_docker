@@ -1,4 +1,4 @@
-This app is written in php conteneurized using [`Docker`] (https://www.docker.com/).
+This app is written in php conteneurized using [`Docker`](https://www.docker.com/).
 
 # GET STARTED 
 
@@ -16,9 +16,9 @@ docker compose up
 docker compose up -d
 ```
 
-Go to [`http://localhost:80`] (http://localhost:80) with your browser to see the result.
+Go to [http://localhost:80](http://localhost:80) with your browser to see the result.
 
 You can now start editing the index.php to add modifications to the app.
 
-This project uses [`MariaDB`] (https://mariadb.org/) for the database.
+This project uses [`MariaDB`](https://mariadb.org/) for the database.
 
